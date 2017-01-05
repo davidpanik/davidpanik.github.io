@@ -1,0 +1,138 @@
+.selfClearing:after {
+	content: " "; 
+	display: block; 
+	height: 0; 
+	clear: both;
+	visibility: hidden;
+}
+
+.selfClearing {
+	*zoom: 1;
+}
+
+body {
+	background-color: #CCCCCC;
+	background-image: url(../img/profile.jpg);
+	background-position: bottom left;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: contain;
+	font-size: 100%;
+	font-family: CamboRegular, Georgia, serif;
+	color: #404040;
+}
+
+body.profile2 {
+	background-color: #9C9C9C;
+	background-image: url(../img/profile_2.jpg);
+}
+
+h1 {
+	color: #0094FF;
+	font-weight: bold;
+	margin-top: 60px;
+	margin-bottom: 30px;
+	letter-spacing: 3px;
+	text-align: center;
+	font-size: 4em;
+	font-family: GrandHotelRegular, Helvetica, sans-serif;
+	text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+	color: #0094FF;
+	margin-bottom: 15px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	font-size: 1.2em;
+	line-height: 1.3em;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+	color: #0094FF;
+	margin-top: 20px;
+	margin-bottom: 15px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	font-size: 1.1em;
+	line-height: 1.3em;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+article {
+	width: 100%;
+	max-width: 600px;
+	float: right;
+}
+
+section {
+	background-color: rgb(255, 255, 255);
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 20px;
+	border-radius: 20px;
+	margin: 30px 30px 80px;
+	box-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
+}
+
+p {
+	margin-bottom: 12px;
+	letter-spacing: 2px;
+	font-size: 1em;
+	line-height: 1.3em;
+	text-shadow: 1px 1px 0 #e1e1e8;
+}
+
+a {
+	color: #0094FF;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+nav {
+	margin-top: 20px;
+	text-align: center;
+}
+
+nav a {
+	margin: 0 5px 5px;
+	display: inline-block;
+	-webkit-transition: 0.5s;
+	-moz-transition:    0.5s;
+	-ms-transition:     0.5s;
+	-o-transition:      0.5s;
+	transition:         0.5s;
+}
+
+nav a:hover {
+	-webkit-transform: scale(1.2);
+	-moz-transform:    scale(1.2);
+	-ms-transform:     scale(1.2);
+	-o-transform:      scale(1.2);
+	transform:         scale(1.2);
+}
+
+@font-face {
+    font-family: "CamboRegular";
+    src: url("../fonts/Cambo-Regular-webfont.eot");
+    src: url("../fonts/Cambo-Regular-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/Cambo-Regular-webfont.woff") format("woff"),
+         url("../fonts/Cambo-Regular-webfont.ttf") format("truetype"),
+         url("../fonts/Cambo-Regular-webfont.svg#CamboRegular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GrandHotelRegular";
+    src: url("../fonts/GrandHotel-Regular-webfont.eot");
+    src: url("../fonts/GrandHotel-Regular-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/GrandHotel-Regular-webfont.woff") format("woff"),
+         url("../fonts/GrandHotel-Regular-webfont.ttf") format("truetype"),
+         url("../fonts/GrandHotel-Regular-webfont.svg#GrandHotelRegular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
