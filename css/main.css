@@ -1,138 +1,222 @@
-.selfClearing:after {
-	content: " "; 
-	display: block; 
-	height: 0; 
-	clear: both;
-	visibility: hidden;
+@import 'reset.css';
+@import url('https://fonts.googleapis.com/css?family=Niramit|Patua+One');
+
+:root {
+    --color-background: #30415D;
+    --color-section: #eee;
+    --color-text: #000;
+    --color-title: #30415D;
+    --color-link: #8EAEBD;
+    --color-button: #8EAEBD;
+    --color-highlight: #CF6766;
 }
 
-.selfClearing {
-	*zoom: 1;
-}
 
 body {
-	background-color: #CCCCCC;
-	background-image: url(../img/profile.jpg);
-	background-position: bottom left;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: contain;
-	font-size: 100%;
-	font-family: CamboRegular, Georgia, serif;
-	color: #404040;
+    background: var(--color-background);
+    background-image: url(../img/background-noise.png);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: 'Niramit', sans-serif;
+    letter-spacing: 0.001em;
+    line-height: 1.2;
 }
 
-body.profile2 {
-	background-color: #9C9C9C;
-	background-image: url(../img/profile_2.jpg);
+main {
+    width: 100%;
+    min-height: 50vh;
+    margin: 2em;
 }
 
-h1 {
-	color: #0094FF;
-	font-weight: bold;
-	margin-top: 60px;
-	margin-bottom: 30px;
-	letter-spacing: 3px;
-	text-align: center;
-	font-size: 4em;
-	font-family: GrandHotelRegular, Helvetica, sans-serif;
-	text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+main:before {
+    display: block;
+    content: ' ';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
 }
 
-h2 {
-	color: #0094FF;
-	margin-bottom: 15px;
-	font-weight: bold;
-	letter-spacing: 2px;
-	font-size: 1.2em;
-	line-height: 1.3em;
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: 0.1em;
+    font-family: 'Patua One', cursive;
+    color: var(--color-title);
 }
 
-h3 {
-	color: #0094FF;
-	margin-top: 20px;
-	margin-bottom: 15px;
-	font-weight: bold;
-	letter-spacing: 2px;
-	font-size: 1.1em;
-	line-height: 1.3em;
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+header,
+section {
+    background-color: var(--color-section);
+    background-image: url(../img/section-noise.png);
+    padding: 2em;
+    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
 }
 
-article {
-	width: 100%;
-	max-width: 600px;
-	float: right;
+header {
+    text-align: center;
+    border-radius: 100px 0px 0px 0px;
+    margin-bottom: 1em;
 }
+
+    header h1 {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    header h2 {
+        margin-bottom: 1.5em;
+    }
+
+    header img {
+        border-radius: 50%;
+        width: 100%;
+        margin-bottom: 1em;
+        max-width: 200px;
+        box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.1);
+    }
+
+    header ul li {
+        display: inline-block;
+        margin: 0.5em;
+    }
+
+        header ul li a {
+            text-decoration: none;
+            color: var(--color-text);
+            padding: 0 0.5em;
+            background: var(--color-button);
+        }
+
+        header ul li a:hover,
+        header ul li a:focus {
+            background: var(--color-highlight);
+        }
 
 section {
-	background-color: rgb(255, 255, 255);
-	background-color: rgba(255, 255, 255, 0.8);
-	padding: 20px;
-	border-radius: 20px;
-	margin: 30px 30px 80px;
-	box-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 0px 0px 100px 0px;
 }
 
-p {
-	margin-bottom: 12px;
-	letter-spacing: 2px;
-	font-size: 1em;
-	line-height: 1.3em;
-	text-shadow: 1px 1px 0 #e1e1e8;
+    section h3 {
+        font-weight: bold;
+        font-size: 2.5em;
+        margin-bottom: 0.7em;
+        text-align: center;
+    }
+
+    section a {
+        text-decoration: none;
+        color: var(--color-text);
+    }
+
+    section p {
+        margin-bottom: 0.5em;
+    }
+
+        section p a {
+            text-decoration: none;
+            color: var(--color-button);
+            transition: color 0.5 ease-out;
+        }
+
+        section p a:hover,
+        section p a:focus {
+            color: var(--color-highlight);
+        }
+
+    section ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1em;
+        grid-row-gap: 1em;
+        align-items: stretch;
+    }
+
+        section li {
+            height: 0;
+            padding-bottom: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        section ul.images li {
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+        }
+
+        section ul.images img {
+            margin-top: 33%;
+        }
+
+        section li a {
+            display: block;
+            background: var(--color-button);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border: none;
+            padding: 2em;
+            transition: background 0.5s ease-out;
+        }
+
+        section li a:hover,
+        section li a:focus {
+            background: var(--color-highlight);
+        }
+
+        section ul img {
+            width: 100%;
+        }
+
+@media (min-width: 600px) {
+    main {
+        max-width: 900px;
+        display: grid;
+        grid-template-columns: 250px auto;
+        grid-column-gap: 1em;
+        align-items: stretch;
+    }
+
+    header {
+        margin-bottom: 0;
+    }
+
+    header h2 {
+        margin-bottom: 2em;
+    }
+
+    header ul li {
+        display: block;
+        margin: 0 0 1.2em 0;
+    }
+
+    section {
+        min-height: 455px;
+    }
+
+    section h3 {
+        text-align: right;
+    }
 }
 
-a {
-	color: #0094FF;
-	text-decoration: none;
+@media (min-width: 760px) {
+    section ul {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
-a:hover {
-	text-decoration: underline;
-}
-
-nav {
-	margin-top: 20px;
-	text-align: center;
-}
-
-nav a {
-	margin: 0 5px 5px;
-	display: inline-block;
-	-webkit-transition: 0.5s;
-	-moz-transition:    0.5s;
-	-ms-transition:     0.5s;
-	-o-transition:      0.5s;
-	transition:         0.5s;
-}
-
-nav a:hover {
-	-webkit-transform: scale(1.2);
-	-moz-transform:    scale(1.2);
-	-ms-transform:     scale(1.2);
-	-o-transform:      scale(1.2);
-	transform:         scale(1.2);
-}
-
-@font-face {
-    font-family: "CamboRegular";
-    src: url("../fonts/Cambo-Regular-webfont.eot");
-    src: url("../fonts/Cambo-Regular-webfont.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/Cambo-Regular-webfont.woff") format("woff"),
-         url("../fonts/Cambo-Regular-webfont.ttf") format("truetype"),
-         url("../fonts/Cambo-Regular-webfont.svg#CamboRegular") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "GrandHotelRegular";
-    src: url("../fonts/GrandHotel-Regular-webfont.eot");
-    src: url("../fonts/GrandHotel-Regular-webfont.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/GrandHotel-Regular-webfont.woff") format("woff"),
-         url("../fonts/GrandHotel-Regular-webfont.ttf") format("truetype"),
-         url("../fonts/GrandHotel-Regular-webfont.svg#GrandHotelRegular") format("svg");
-    font-weight: normal;
-    font-style: normal;
+@media (min-height: 600px) {
+    body {
+        align-items: center;
+    }
 }
